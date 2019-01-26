@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Weight Converter</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -13,34 +16,50 @@
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <h1 class="display-4 text-center mb-3">Weight Converter</h1>
-        <form>
-          <div class="form-group">
-            <input id="lbsInput" type="number" class="form-control form-control-lg" placeholder="Enter Pounds...">
+        <form id="allInput">
+          <div class="form-row">
+            <div class="form-group col-md-9">
+              <input id="weightInput" name="weightInput" type="number" class="form-control form-control-lg" placeholder="Enter weight...">
+            </div>
+            <div class="form-group col-md-3">
+              <select class="form-control form-control-lg" id="weightType" name="weightType">
+                <option value="lb">Pounds</option>
+                <option value="kg">Kilograms</option>
+                <option value="oz">Ounces</option>
+                <option value="gr">Grams</option>      
+              </select>  
+            </div>
           </div>
         </form>
         <div id="output">
-          <div class="card bg-primary mb-2 p-2">
+          <div class="card bg-success mb-2 p-2" id="card-kg">
+            <div class="card-block">
+              <h3>Kilograms:</h3>
+              <div id="kgOutput" class="font-weight-bold" ></div>
+            </div>
+          </div>
+          <div class="card bg-primary mb-2 p-2" id="card-oz">
+            <div class="card-block">
+              <h3>Ounces:</h3>
+              <div id="ozOutput" class="font-weight-bold"></div>
+            </div>
+          </div> 
+          <div class="card bg-warning mb-2 p-2" id="card-gr">
             <div class="card-block">
               <h3>Grams:</h3>
               <div id="gramsOutput" class="font-weight-bold"></div>
             </div>
           </div>
-          <div class="card bg-success mb-2 p-2">
+          <div class="card bg-danger mb-2 p-2" id="card-lb">
             <div class="card-block">
-              <h3>Kilograms:</h3>
-              <div id="kgOutput" class="font-weight-bold"></div>
-            </div>
-          </div>
-          <div class="card bg-warning mb-2 p-2">
-            <div class="card-block">
-              <h3>Ounces:</h3>
-              <div id="ozOutput" class="font-weight-bold"></div>
+              <h3>Pounds:</h3>
+              <div id="lbsOutput" class="font-weight-bold"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div>  
   <script src="./scripts.js"></script>
 </body>
 </html>
